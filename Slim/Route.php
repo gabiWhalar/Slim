@@ -173,11 +173,13 @@ class Route
                 return call_user_func_array(array($obj, $method), func_get_args());
             };
         }
-
+	
+/*
+don't do these kind of check in production
         if (!is_callable($callable)) {
             throw new \InvalidArgumentException('Route callable must be callable');
         }
-
+*/
         $this->callable = $callable;
     }
 
